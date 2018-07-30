@@ -1,5 +1,7 @@
 <!doctype html>
+<!--  Arquivo que contem todos os HTML (tag mae)tags -->
 <html>
+  <!--  Nada disso aparece na pagina alem do titulo -->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,11 +9,13 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title %></title>
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application" %> <!-- importa todo os meus index de todas as pastas -->
+    <%= javascript_include_tag "application" %> <!-- importa js hubs de todas as pastas -->
     <%= favicon_tag 'images/favicon.png' %>
   </head>
   <body>
-    <%= yield %>
+    <%= partial "layouts/navbar" %>   <!-- inject layouts/_navbar.html.erb -->
+    <%= yield %>                      <!-- tem eu index, n meu index tem meus cards, banners... -->
+    <%= partial "layouts/footer" %>
   </body>
 </html>
